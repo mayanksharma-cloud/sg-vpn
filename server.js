@@ -4,7 +4,9 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors());
-
+app.get('/', (req, res) => {
+  res.send('✅ SG Proxy is running. Use /fetch?url=...');
+});
 app.get('/fetch', async (req, res) => {
   const targetUrl = req.query.url;
 
